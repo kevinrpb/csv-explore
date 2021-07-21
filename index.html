@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CSV Explore</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="lib/papaparse.min.js"></script>
+  <script src="lib/list.min.js"></script>
+
+  <script src="scripts.js"></script>
+</head>
+<body onload="init();">
+  <header>
+    <h1>CSV Explore</h1>
+  </header>
+
+  <main>
+    <section id="file-upload">
+      <h2>Select file</h2>
+
+      <div id="drop-area">
+        <p>Arrastra o elige el archivo CSV</p>
+
+        <form id="file-selection">
+          <input type="file" accept=".csv" id="file-input" onchange="handleFiles(this.files)">
+          <label for="file-input" role="button">Seleccionar archivo</label>
+        </form>
+
+        <p id="file-name"></p>
+      </div>
+    </section>
+
+
+    <section id="errors">
+      <p id="error-message"></p>
+    </section>
+
+    <section id="data-explore">
+      <h2>Explore Data</h2>
+
+      <input type="text" id="search-value" placeholder="Search..." class="search">
+
+      <table id="data-table">
+
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>by <a href="https://kevinrpb.me">kevinrpb</a></p>
+  </footer>
+</body>
+</html>
